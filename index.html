@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2>Konfigurace automobilu</h2>
+        <form>
+            <div>
+                <h3>Vyberte znacku auta</h3>
+                <select id="znacka" class="form-select" aria-label="Default select example">
+                    <option selected>Vyberte znacku auta</option>
+                    <option value="1500000">Mercedes</option>
+                    <option value="1200000">Volvo</option>
+                    <option value="1350000">Audi</option>
+                    <option value="1400000">BMW</option>
+                  </select>
+            </div>
+              <div>
+                <h3>Vyberte typ laku</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="barva" id="flexRadioDefault1" value="zaklad">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Zakladni barva (bez priplatku)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="barva" id="flexRadioDefault1" value="paleny">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Paleny lak (+5% ze zakladni ceny)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="barva" id="flexRadioDefault1" value="metalicky">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Metalicky lak (+7% ze zakladni ceny)
+                    </label>
+                  </div>
+              </div>
+              <div>
+                <h3>Vyberte si priplatkovou vybavu</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="vybava" value="kamera">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Parkovaci kamery (+10 000)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="vybava" value="kola">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Litá kola (+20 000 Kč)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="vybava" value="sedacky">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Kožené sedačky (+ 50 000 Kč)
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="vybava" value="tuning">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Tuningová úprava (+20 % ze základní ceny vozu)
+                    </label>
+                  </div>
+              </div>
+              <div class="row pt-5 my-3">
+                <div class="col-md-3">
+                    <p>Kolik jste ochoten zaplatit?</p>
+                    <p class="vyslednaZprava">....</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Kč</span>
+                        <input id="maxCena" type="number" class="form-control" name="predstava" placeholder="Zadej castku" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="suma">0 Kč</p>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" onclick="Spocitej()" class="btn btn-primary mb-2" id="tlac">&nbsp;Zobraz cenu</button>
+                </div>
+            </div>
+            <div class="row pb-5 mt-2">
+                <div class="col-md-3">
+                    Zadej email:
+                </div>  
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input id="emailID" type="email" name="mail" class="form-control" placeholder="Zadejte platny email" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="msg"></p>
+                </div>  
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary" onclick="odesli()" id="tlac2">&nbsp;Odeslat</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
